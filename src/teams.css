@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
   position: absolute;
-  top: 300px;
+  top: 350px;
   width: 100%;
 }
 

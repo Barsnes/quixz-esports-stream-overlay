@@ -6,7 +6,7 @@
   grid-template-columns: 2fr 1fr 2fr;
   padding:  0 1rem;
   position: absolute;
-  bottom: 160px;
+  top: 50px;
   transform: translateX(-50%);
   left: 50%;
   color: var(--dark-blue)

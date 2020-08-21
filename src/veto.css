@@ -6,7 +6,8 @@
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
-  top: 800px;
+  bottom: 150px;
+  line-height: 25px;
 }
 
 .vetoBox {
@@ -15,7 +16,8 @@
   font-size: 1.7rem;
   background-color: white;
   display: grid;
-  grid-template-columns: 1fr 2fr
+  grid-template-columns: 1fr 2fr;
+  position: relative;
 }
 
 .vetoBox.ban {
@@ -34,4 +36,57 @@
 
 .vetoBox span {
   margin: auto;
+}
+
+.vetoBox .final-score {
+  position: absolute;
+  background-color: white;
+  color: var(--dark-blue);
+  width: 100%;
+  padding: .5rem 0;
+  top: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 30px;
+}
+
+.vetoBox .final-score img {
+  height: 100%;
+}
+
+.scoreBoxes {
+  display: grid;
+  width: calc(60% + 2rem);
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1rem;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 100px;
+  line-height: 25px;
+}
+
+.scoreBox {
+  width: 100%;
+  height: 100px;
+  font-size: 1.7rem;
+  background-color: white;
+  color: var(--dark-blue);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 2fr 1fr
+}
+
+.scoreBox span {
+  margin: auto;
+}
+
+.scoreBox img {
+  height: 80%;
+  margin-left: .5rem;
+  margin: auto;
+}
+
+.scoreBox .score {
+  grid-column: 1 / 3;
 }

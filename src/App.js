@@ -6,11 +6,13 @@ import MatchInfo from "./components/match/MatchInfo"
 import Teams from "./components/teams/Teams"
 import MatchBar from "./components/match/MatchBar"
 import Veto from "./components/match/Veto"
+import Scores from "./components/match/Scores"
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.getMatch = this.getMatch.bind(this)
+    this.getTeams = this.getTeams.bind(this)
 
     this.state = {
       match: [
@@ -28,6 +30,7 @@ class App extends React.Component {
         ],
       leftTeam: undefined,
       rightTeam: undefined,
+      teams: undefined,
       error: false
     }
   }
@@ -35,6 +38,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getMatch()
+    this.getTeams()
 
     try {
          this.intervalID = setInterval(async () => {
@@ -69,10 +73,28 @@ class App extends React.Component {
     });
   }
 
+  getTeams() {
+    http({
+      method: "get",
+      url: "/teams"
+    })
+    .then(res => {
+        let teams = JSON.parse(res.request.response);
+        this.setState({
+          teams: teams
+        })
+    })
+    .catch(error => {
+        this.setState({
+            error: true
+        });
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <Veto veto={this.state.match.vetos} />
+        <Veto veto={this.state.match.vetos} teams={this.state.teams} />
         <MatchInfo match={this.state.match} />
         <MatchBar />
       </div>
@@ -81,3 +103,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+        // <Scores veto={this.state.match.vetos} teams={this.state.teams} />
