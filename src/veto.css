@@ -1,6 +1,6 @@
 .vetoBoxes {
   display: grid;
-  width: calc(60% + 2rem);
+  width: calc(90% + 2rem);
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 1rem;
   position: absolute;
@@ -12,8 +12,8 @@
 
 .vetoBox {
   width: 100%;
-  height: 70px;
-  font-size: 1.7rem;
+  height: 90px;
+  font-size: 2.3rem;
   background-color: white;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -47,7 +47,7 @@
   top: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  height: 30px;
+  height: 50px;
 }
 
 .vetoBox .final-score img {

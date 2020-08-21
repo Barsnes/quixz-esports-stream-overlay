@@ -2,27 +2,19 @@ import React from "react"
 
 import Team from "../teams/Team"
 
-export default class MatchInfo extends React.Component {
-
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    let match = this.props.match
+export default function MatchInfo(props) {
 
     return (
       <div>
         {
-          match.right !== undefined &&
+          props.match.right !== undefined &&
           <div className="bothTeams">
-            <Team match={match.left}  side="left" />
+            <Team match={props.match.left}  side="left" />
             <h1>VS</h1>
-            <Team match={match.right} side="right" />
+            <Team match={props.match.right} side="right" />
           </div>
         }
       </div>
     )
-  }
 
 }

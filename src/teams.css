@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
   position: absolute;
-  top: 350px;
+  top: 450px;
   width: 100%;
 }
 
@@ -13,6 +13,7 @@
   color: var(--yellow);
   font-size: 7rem;
   margin: 0;
+  text-shadow: 0 0 25px #000000;
 }
 
 .teamBox {

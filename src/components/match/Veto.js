@@ -1,13 +1,8 @@
 import React from "react"
-import http from "../services/http"
 
 import "../../veto.css"
 
 export default class Veto extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     if (this.props.teams === undefined || this.props.veto === undefined) {
       return ( <div></div> )
@@ -18,10 +13,6 @@ export default class Veto extends React.Component {
 
     let vetoBoxes = []
 
-    // vetoBoxes = veto.map(veto => (
-    //   veto.teamId && <div key={`veto-${veto.mapName}`}>{teams.filter(team => team.id === veto.teamId)[0]} {veto.type} {veto.mapName}</div>
-    // ))
-
     for (var i = 0; i < veto.length; i++) {
       if (veto[i].teamId !== "") {
           let team = teams.filter(team => team._id === veto[i].teamId)[0]
@@ -30,15 +21,15 @@ export default class Veto extends React.Component {
 
           vetoBoxes.push(
             <div className={`vetoBox ${veto[i].type}`} key={`veto-${veto[i].mapName}`}>
-              <img src={team.logo}></img>
+              <img alt="team logo" src={team.logo}></img>
               <span>
                 {veto[i].type}s{" "}
                 {veto[i].mapName.substr(3).charAt(0).toUpperCase() + veto[i].mapName.substr(4)}
               </span>
               { veto[i].mapEnd && <span className="final-score">
-                <img src={firstTeam[0].logo}/>
-                {Object.values((veto[i].score || ['-','-'])).join(":")}
-                <img src={secondTeam[0].logo}/>
+                <img alt="first team logo" src={firstTeam[0].logo}/>
+                <span>{Object.values((veto[i].score || ['-','-'])).join(":")}</span>
+                <img alt="second team logo" src={secondTeam[0].logo}/>
               </span> }
             </div>
           )

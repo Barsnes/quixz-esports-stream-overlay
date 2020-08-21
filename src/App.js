@@ -3,10 +3,8 @@ import './App.css';
 import http from "./components/services/http"
 
 import MatchInfo from "./components/match/MatchInfo"
-import Teams from "./components/teams/Teams"
 import MatchBar from "./components/match/MatchBar"
 import Veto from "./components/match/Veto"
-import Scores from "./components/match/Scores"
 
 class App extends React.Component {
   constructor(props) {
