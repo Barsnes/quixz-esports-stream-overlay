@@ -1,0 +1,50 @@
+.bothTeams {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  position: absolute;
+  top: 300px;
+  width: 100%;
+}
+
+.bothTeams h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--yellow);
+  font-size: 7rem;
+  margin: 0;
+}
+
+.teamBox {
+  background-color: white;
+  color: var(--dark-blue);
+  height: 150px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: auto 0;
+}
+
+.teamBox.right {
+  flex-direction: row-reverse;
+}
+
+.teamBox .teamImage {
+  height: 100%;
+  width: 70%;
+}
+
+.teamBox img {
+  height: 100%;
+  transform: scale(1.8);
+}
+
+.teamBox .teamWins {
+  font-size: 6rem;
+  font-weight: 400;
+  margin: auto;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
