@@ -1,10 +1,17 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 import './App.css';
 import http from "./components/services/http"
 
 import MatchInfo from "./components/match/MatchInfo"
 import MatchBar from "./components/match/MatchBar"
 import Veto from "./components/match/Veto"
+import Timeline from "./components/scoreboard/Timeline"
 
 class App extends React.Component {
   constructor(props) {
@@ -92,9 +99,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Veto veto={this.state.match.vetos} teams={this.state.teams} />
-        <MatchInfo match={this.state.match} />
-        <MatchBar />
+        <Router>
+          <Switch>
+            <Route path="/scoreboard">
+              <Timeline match={this.state.match} />
+            </Route>
+            <Route>
+              <Veto veto={this.state.match.vetos} teams={this.state.teams} />
+              <MatchInfo match={this.state.match} />
+              <MatchBar />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }
