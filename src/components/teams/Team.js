@@ -40,7 +40,7 @@ export default class Team extends React.Component {
 
     if (team === undefined) {
       return(
-        <></>
+        <div></div>
       )
     }
 
