@@ -12,6 +12,7 @@ import MatchInfo from "./components/match/MatchInfo"
 import MatchBar from "./components/match/MatchBar"
 import Veto from "./components/match/Veto"
 import Timeline from "./components/scoreboard/Timeline"
+import Scoreboard from "./components/scoreboard/Scoreboard"
 
 class App extends React.Component {
   constructor(props) {
@@ -102,6 +103,7 @@ class App extends React.Component {
         <Router>
           <Switch>
             <Route path="/scoreboard">
+              <Scoreboard match={this.state.match} />
               <Timeline match={this.state.match} />
             </Route>
             <Route>

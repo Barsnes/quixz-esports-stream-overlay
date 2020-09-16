@@ -2,9 +2,6 @@ import React from "react"
 import "../../timeline.css"
 
 export default class Timeline extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
 
@@ -25,7 +22,7 @@ export default class Timeline extends React.Component {
     matchBoxes = finishedMaps[0].rounds.map(round => (
       <div key={Math.random()} className={`timeline-box ${round.winner}`}>
         {`Round ${round.round}`}
-        <img src={`/images/${round.win_type}.png`}></img>
+        <img alt={round.win_type} src={`/images/${round.win_type}.png`}></img>
       </div>
     ))
 

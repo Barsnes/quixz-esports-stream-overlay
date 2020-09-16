@@ -31,3 +31,7 @@
 .timeline-box.T {
   background-image: linear-gradient(#ffffff00, var(--color-t))
 }
+
+.player {
+  font-size: 2rem
+}
