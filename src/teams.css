@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
   position: absolute;
-  top: 450px;
+  top: 430px;
   width: 100%;
 }
 
@@ -17,9 +17,9 @@
 }
 
 .teamBox {
-  background-color: white;
-  color: var(--dark-blue);
-  height: 150px;
+  background-color: var(--dark-blue);
+  color: white;
+  height: 180px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;

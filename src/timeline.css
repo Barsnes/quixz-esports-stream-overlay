@@ -6,7 +6,8 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  background-color: var(--dark-blue)
+  top: 5rem;
+  /* background-color: var(--dark-blue) */
 }
 
 .timeline-box {

@@ -13,6 +13,7 @@ import MatchBar from "./components/match/MatchBar"
 import Veto from "./components/match/Veto"
 import Timeline from "./components/scoreboard/Timeline"
 import Scoreboard from "./components/scoreboard/Scoreboard"
+import CameraBar from "./components/camerabar/CameraBar"
 
 class App extends React.Component {
   constructor(props) {
@@ -46,10 +47,14 @@ class App extends React.Component {
     this.getMatch()
     this.getTeams()
 
+    if (window.location.pathname === "/camerabar") {
+      return
+    }
+
     try {
-         this.intervalID = setInterval(async () => {
-             this.getMatch();
-         }, 1000);
+     this.intervalID = setInterval(async () => {
+         this.getMatch();
+     }, 1000);
      } catch (e) {
          console.log(e);
      }
@@ -98,6 +103,9 @@ class App extends React.Component {
   }
 
   render() {
+
+    console.log(this.state.match.vetos)
+
     return (
       <div className="App">
         <Router>
@@ -105,6 +113,9 @@ class App extends React.Component {
             <Route path="/scoreboard">
               <Scoreboard match={this.state.match} />
               <Timeline match={this.state.match} />
+            </Route>
+            <Route path="/camerabar">
+              <CameraBar teams={this.state.teams} />
             </Route>
             <Route>
               <Veto veto={this.state.match.vetos} teams={this.state.teams} />

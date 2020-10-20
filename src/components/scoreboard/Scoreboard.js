@@ -18,6 +18,8 @@ export default class Scoreboard extends React.Component {
       return( <div></div> )
     }
 
+    console.log(lastMap[0])
+
       for (var i = 0; i < lastMap[0].rounds.length; i++) {
 
         let players = lastMap[0].rounds[i].players
@@ -34,8 +36,6 @@ export default class Scoreboard extends React.Component {
         })
 
       }
-
-    console.log(playersArr)
 
     Object.entries(playersArr).map((player) => {
         playerBoxes.push(<div key={player[0]} className="player">{`Player: ${player[0]} - Kills ${player[1].kills}`}</div>);

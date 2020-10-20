@@ -14,10 +14,10 @@ export default class Team extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.match !== undefined ) {
+    if (this.props.team !== undefined ) {
       http({
         method: "get",
-        url: "/teams/" + this.props.match.id
+        url: "/teams/" + this.props.team.id
       })
       .then(res => {
           let team = JSON.parse(res.request.response);
@@ -31,6 +31,8 @@ export default class Team extends React.Component {
           });
       });
     }
+
+    // console.log(this.state.team)
   }
 
 
@@ -44,9 +46,9 @@ export default class Team extends React.Component {
     }
 
     return (
-      <div key={team.id} className={`teamBox ${this.props.side}`}>
-        <div className="teamImage"><img src={`data:image/jpeg;base64,${team.logo}`} alt={`${team.name} logo`} /></div>
-        <h5 className="teamWins">{this.props.match.wins}</h5>
+      <div key={team.id} className={`team ${this.props.side}`}>
+        <img src={`data:image/jpeg;base64,${team.logo}`} alt={`${team.name} logo`} />
+        <h5 className="teamWins">{this.props.team.wins}</h5>
       </div>
     )
   }

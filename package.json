@@ -12,7 +12,8 @@
     "react-live-clock": "^4.0.5",
     "react-native-base64": "^0.1.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-scroll-text": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
